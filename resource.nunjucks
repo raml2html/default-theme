@@ -69,14 +69,13 @@
                 {% for securedBy in method.securedBy %}
                   {% if securedBy %}
                     <div class="alert alert-warning">
-                      {% set securitySchemeName = getSecuritySchemeName(securedBy) %}
-                      {% set securityScheme = securitySchemes[securitySchemeName] %}
+                      {% set securityScheme = securitySchemes[securedBy.schemeName] %}
                       <span class="glyphicon glyphicon-lock" title="Authentication required"></span>
-                      Secured by <b>{% if securityScheme.displayName %}{{securityScheme.displayName}}{% else %}{{securitySchemeName}}{% endif %}</b>
-                      {% if securedBy[securitySchemeName].scopes %}
+                      Secured by <b>{{securityScheme.displayName}}</b>
+                      {% if securedBy.scopes %}
                         with scopes:
                         <ul>
-                          {% for scope in securedBy[securitySchemeName].scopes %}
+                          {% for scope in securedBy.scopes %}
                             <li>{{scope}}</li>
                           {% endfor %}
                         </ul>
@@ -326,9 +325,8 @@
                 {% if method.securedBy.length %}
                   <div class="tab-pane" id="{{ resource.uniqueId }}_{{ method.method }}_securedby">
                     {% for securedBy in method.securedBy %}
-                      {% set securitySchemeName = getSecuritySchemeName(securedBy) %}
-                      {% set securityScheme = securitySchemes[securitySchemeName] %}
-                      <h1>Secured by {% if securityScheme.displayName %}{{ securityScheme.displayName }}{% else %}{{ securedBy }}{% endif %}</h1>
+                      {% set securityScheme = securitySchemes[securedBy.schemeName] %}
+                      <h1>Secured by {{ securityScheme.displayName }}</h1>
 
                       {% if securityScheme.describedBy.headers.length %}
                         <h3>Headers</h3>
