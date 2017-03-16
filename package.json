@@ -10,6 +10,7 @@
     "url": "https://github.com/raml2html/default-theme/issues"
   },
   "devDependencies": {
+    "glob": "7.1.x",
     "raml2html": "5.x"
   },
   "homepage": "https://github.com/raml2html/default-theme",

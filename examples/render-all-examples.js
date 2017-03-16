@@ -4,7 +4,7 @@ const fs = require('fs');
 
 process.chdir(__dirname);
 
-const config = raml2html.getDefaultConfig();
+const config = raml2html.getConfigForTheme('raml2html-default-theme');
 const examples = glob.sync('*.raml');
 
 examples.forEach((ramlFile) => {
