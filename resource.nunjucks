@@ -206,7 +206,7 @@
                                     {% endfor %}
                                   </ul>
                                 {% endif %}
-                                
+
                                 {# Request - Array item examples #}
                                 {% set parent = b.items %}
                                 {% include "./examples.nunjucks" %}
@@ -223,7 +223,7 @@
                             {% endfor %}
                           </ul>
                         {% endif %}
-                        
+
                         {# Request - Body examples #}
                         {% set parent = b %}
                         {% include "./examples.nunjucks" %}
@@ -295,7 +295,7 @@
                                       {% endfor %}
                                     </ul>
                                   {% endif %}
-                                  
+
                                   {# Response - Array item examples #}
                                   {% set parent = b.items.examples %}
                                   {% include "./examples.nunjucks" %}
@@ -312,7 +312,7 @@
                               {% endfor %}
                             </ul>
                           {% endif %}
-                          
+
                           {# Response - Body examples #}
                           {% set parent = b %}
                           {% include "./examples.nunjucks" %}
