@@ -193,6 +193,10 @@
             <h1>{{ title }} API documentation{% if version %} <small>version {{ version }}</small>{% endif %}</h1>
             <p>{{ baseUri }}</p>
 
+            {% if description %}
+              <p>{{ description }}</p>
+            {% endif %}
+
             {% if baseUriParameters %}
               <ul>
                 {% for item in baseUriParameters %}
