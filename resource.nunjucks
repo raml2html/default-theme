@@ -184,6 +184,11 @@
                           {% endif %}
                         {% endif %}
 
+                        {% if b.schema %}
+                          <p><strong>Schema</strong>:</p>
+                          <pre><code>{{ b.schema | escape }}</code></pre>
+                        {% endif %}
+
                         {% if b.content %}
                           <p><strong>Content</strong>:</p>
                           <pre><code>{{ b.content | escape }}</code></pre>
@@ -271,6 +276,11 @@
                               <p><strong>Type</strong>:</p>
                               <pre><code>{{ b.type | escape }}</code></pre>
                             {% endif %}
+                          {% endif %}
+
+                          {% if b.schema %}
+                            <p><strong>Schema</strong>:</p>
+                            <pre><code>{{ b.schema | escape }}</code></pre>
                           {% endif %}
 
                           {% if b.content %}
