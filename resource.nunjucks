@@ -380,7 +380,7 @@
                         </ul>
                       {% endif %}
 
-                      {% for response in securityScheme.describedBy.responses.length %}
+                      {% for response in securityScheme.describedBy.responses %}
                         <h2>HTTP status code <a href="http://httpstatus.es/{{ response.code }}" target="_blank">{{ response.code }}</a></h2>
 {% markdown %}
 {{ response.description }}
