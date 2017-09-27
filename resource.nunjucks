@@ -193,7 +193,7 @@
                                 </ul>
                               </p>
                             {% else %}
-                              <p><strong>Type</strong>: {{ b.type }}</p>
+                              <p><strong>Type</strong>: {{ b.type }} <i>({{ b.name }})</i></p>
                             {% endif %}
                           {% else %}
                             <p><strong>Type</strong>:</p>
@@ -230,6 +230,13 @@
                               </div>
                             {% endif %}
                           {% endif %}
+                        {% endif %}
+
+                        {% if b.description %}
+                          {% markdown %}
+                            <strong>Description</strong>
+                          {{ b.description }}
+                        {% endmarkdown %}
                         {% endif %}
 
                         {% if b.properties.length %}
