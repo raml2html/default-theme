@@ -380,7 +380,7 @@
                         </ul>
                       {% endif %}
 
-                      {% for response in securityScheme.describedBy.responses.length %}
+                      {% for response in securityScheme.describedBy.responses %}
                         <h2>HTTP status code <a href="http://httpstatus.es/{{ response.code }}" target="_blank">{{ response.code }}</a></h2>
 {% markdown %}
 {{ response.description }}
@@ -393,6 +393,88 @@
                             {% endfor %}
                           </ul>
                         {% endif %}
+
+                        {% if response.body.length %}
+                          <h3>Body</h3>
+                          {% for b in response.body %}
+                            <p><strong>Media type</strong>: {{ b.key }}</p>
+
+                            {% if b.type %}
+                              {% if isStandardType(b.type) %}
+                                {% if b.type === 'array' and b.items %}
+                                  <p><strong>Type</strong>: array of {% if isStandardType(b.items) %}{{ b.items }}{% else %}{{ b.items.displayName }}{% endif %}</p>
+                                {% elif b.type === 'union' and b.anyOf.length %}
+                                  <p><strong>Possible types</strong>:
+                                    <ul>
+                                      {% for super in b.anyOf %}
+                                        <li>
+                                          <p><strong>{{ super.displayName }}</strong></p>
+                                          <div class="items">
+                                            <ul>
+                                              {% for item in super.properties %}
+                                                {% include "./item.nunjucks" %}
+                                              {% endfor %}
+                                            </ul>
+                                          </div>
+                                        </li>
+                                      {% endfor %}
+                                    </ul>
+                                  </p>
+                                {% else %}
+                                  <p><strong>Type</strong>: {{ b.type }}</p>
+                                {% endif %}
+                              {% else %}
+                                <p><strong>Type</strong>:</p>
+                                <pre><code>{{ b.type | escape }}</code></pre>
+                              {% endif %}
+                            {% endif %}
+
+                            {% if b.content %}
+                              <p><strong>Content</strong>:</p>
+                              <pre><code>{{ b.content | escape }}</code></pre>
+                            {% endif %}
+
+                            {% if b.items and b.items.properties %}
+                              {% if isStandardType(b.items) %}
+                                <p><strong>Items</strong>: {{ b.items }}</p>
+                              {% endif %}
+
+                              {% if not isStandardType(b.items) %}
+                                <p><strong>Items</strong>: {{ b.items.displayName }}</p>
+
+                                {% if b.items.properties or b.items.examples.length %}
+                                  <div class="items">
+                                    {% if b.items.properties %}
+                                      <ul>
+                                        {% for item in b.items.properties %}
+                                          {% include "./item.nunjucks" %}
+                                        {% endfor %}
+                                      </ul>
+                                    {% endif %}
+
+                                    {# Response - Array item examples #}
+                                    {% set parent = b.items.examples %}
+                                    {% include "./examples.nunjucks" %}
+                                  </div>
+                                {% endif %}
+                              {% endif %}
+                            {% endif %}
+
+                            {% if b.properties.length %}
+                              <strong>Properties</strong>
+                              <ul>
+                                {% for item in b.properties %}
+                                  {% include "./item.nunjucks" %}
+                                {% endfor %}
+                              </ul>
+                            {% endif %}
+
+                            {# Response - Body examples #}
+                            {% set parent = b %}
+                            {% include "./examples.nunjucks" %}
+                          {% endfor %}
+                        {% endif %}
+
                       {% endfor %}
 
                     {% endfor %}
