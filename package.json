@@ -14,7 +14,8 @@
   },
   "homepage": "https://github.com/raml2html/default-theme",
   "keywords": [
-    "RAML", "raml2html-theme"
+    "RAML",
+    "raml2html-theme"
   ],
   "license": "MIT",
   "repository": {
