@@ -92,7 +92,7 @@
 
               <!-- Nav tabs -->
               <ul class="nav nav-tabs">
-                {% if method.allUriParameters.length or method.queryString or method.queryParameters or method.headers or method.body %}
+                {% if method.allUriParameters.length or method.queryString or method.queryParameters or method.headers or method.body or method.annotations.length %}
                   <li class="active">
                     <a href="#{{ resource.uniqueId }}_{{ method.method }}_request" data-toggle="tab">Request</a>
                   </li>
@@ -102,7 +102,7 @@
                   <li{%
                     if not method.allUriParameters.length and not method.queryParameters
                     and not method.queryString
-                    and not method.headers and not method.body
+                    and not method.headers and not method.body and not method.annotations.length
                     %} class="active"{%
                     endif
                     %}>
@@ -119,7 +119,7 @@
 
               <!-- Tab panes -->
               <div class="tab-content">
-                {% if method.allUriParameters.length or method.queryString or method.queryParameters or method.headers or method.body %}
+                {% if method.allUriParameters.length or method.queryString or method.queryParameters or method.headers or method.body or method.annotations.length %}
                   <div class="tab-pane active" id="{{ resource.uniqueId }}_{{ method.method }}_request">
                     {% if resource.allUriParameters.length %}
                       <h3>URI Parameters</h3>
@@ -253,7 +253,7 @@
                   <div class="tab-pane{%
                     if not method.allUriParameters.length and not method.queryParameters.length
                     and not method.queryString
-                    and not method.headers.length and not method.body.length
+                    and not method.headers.length and not method.body.length and not method.annotations.length
                     %} active{%
                     endif
                     %}" id="{{ resource.uniqueId }}_{{ method.method }}_response">
