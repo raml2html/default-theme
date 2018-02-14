@@ -2,6 +2,8 @@
 
 types:
   Song:
+    description: |
+      A song.
     properties:
       title: string
       length: number
@@ -14,11 +16,20 @@ types:
       song2:
         title: "Last"
         length: 3
+  Songs:
+    type: Song[]
+    minItems: 1
+    maxItems: 20
+    uniqueItems: true
   Album:
     properties:
       title: string
-      songs: Song[]
+      songs: Songs
+  Albums:
+    type: Album[]
   Musician:
+    description: |
+      The artist of a song.
     properties:
       name: string
       discography: (Song | Album)[]

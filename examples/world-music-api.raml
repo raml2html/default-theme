@@ -184,6 +184,13 @@ uses:
       genre:
         description: filter the songs by genre
   post:
+    body:
+      application/json:
+        type: SongsLib.Song
+    responses:
+      201:
+        application/json:
+          type: SongsLib.Song
 
   /{songId}:
     get:
@@ -200,3 +207,32 @@ uses:
             application/xml:
               type: !include world-music-api/schemas/songs.xsd
               example: !include world-music-api/examples/songs.xml
+
+  /albums:
+    displayName: Albums
+    description: Access to all albums in the music world library.
+    is: [ secured ]
+    get:
+      securedBy: [ oauth_2_0, null ]
+      responses:
+        200:
+          body:
+            application/json:
+              type: SongsLib.Albums
+
+    post:
+      body:
+        application/json:
+          type: SongsLib.Album
+      responses:
+        201:
+          application/json:
+            type: SongsLib.Album
+
+    /{albumId}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: SongsLib.Album
