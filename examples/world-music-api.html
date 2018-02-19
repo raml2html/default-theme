@@ -4,7 +4,7 @@
     <title>World Music API API documentation</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="generator" content="https://github.com/raml2html/raml2html 6.7.0">
+    <meta name="generator" content="https://github.com/raml2html/raml2html 7.0.0">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -353,602 +353,141 @@
                             <div class="tab-pane active" id="api_post_request">
                               <h3>Body</h3>
                               <p><strong>Media type</strong>: application/json</p>
-                              <p><strong>Possible types</strong>:
-                                <ul>
-                                  <li>
-                                    <p><strong>RamlDataType</strong></p>
-                                    <div class="items">
-                                      <ul>
-                                        <li>
-                                          <strong>propString</strong>:
-                                          <em>required (string)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propStringArray1</strong>:
-                                          <em>required (array of )
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>ideas</strong>:
-                                          <em>required (array of items)
-      </em>
-                                          <p><strong>Items</strong>: items</p>
-                                          <div class="items">
-                                            <ul>
-                                              <li>
-                                                <strong>comment</strong>:
-                                                <em>required (string)
-      </em>
-                                              </li>
-                                            </ul>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <strong>extIdeas</strong>:
-                                          <em>required (object)
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>comment</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>createdBy</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>feedback</strong>:
-                                          <em>required (string - default: very nice - minLength: 1 - maxLength: 255 - pattern: [a-zA-Z\s]*)
-      </em>
-                                          <p><strong>Example</strong>:</p>
-                                          <div class="examples">
-                                            <pre><code>very well made</code></pre>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <strong>propNumber</strong>:
-                                          <em>required (number - minimum: 0 - maximum: 32)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propInteger</strong>:
-                                          <em>required (integer - minimum: 3 - maximum: 5)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propBoolean</strong>:
-                                          <em>required (boolean)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propDate</strong>:
-                                          <em>required (date-only)
-      </em>
-                                          <p><strong>Example</strong>:</p>
-                                          <div class="examples">
-                                            <pre><code>2015-05-23</code></pre>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <strong>userPicture</strong>:
-                                          <em>required (file)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>NilValue</strong>:
-                                          <em>required (object)
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>name</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>comment</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>CatOrDog</strong>:
-                                          <em>required ([object Object])
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>name</strong>:
-                                              <em>required ([object Object])
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>color</strong>:
-                                              <em>required ([object Object])
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>CatAndDog</strong>:
-                                          <em>required (object)
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>name</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>fangs</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>color</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>PossibleMeetingDate</strong>:
-                                          <em>required (date-only)
-      </em>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <p><strong>RamlDataType</strong></p>
-                                    <div class="items">
-                                      <ul>
-                                        <li>
-                                          <strong>propString</strong>:
-                                          <em>required (string)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propStringArray1</strong>:
-                                          <em>required (array of )
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>ideas</strong>:
-                                          <em>required (array of items)
-      </em>
-                                          <p><strong>Items</strong>: items</p>
-                                          <div class="items">
-                                            <ul>
-                                              <li>
-                                                <strong>comment</strong>:
-                                                <em>required (string)
-      </em>
-                                              </li>
-                                            </ul>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <strong>extIdeas</strong>:
-                                          <em>required (object)
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>comment</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>createdBy</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>feedback</strong>:
-                                          <em>required (string - default: very nice - minLength: 1 - maxLength: 255 - pattern: [a-zA-Z\s]*)
-      </em>
-                                          <p><strong>Example</strong>:</p>
-                                          <div class="examples">
-                                            <pre><code>very well made</code></pre>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <strong>propNumber</strong>:
-                                          <em>required (number - minimum: 0 - maximum: 32)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propInteger</strong>:
-                                          <em>required (integer - minimum: 3 - maximum: 5)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propBoolean</strong>:
-                                          <em>required (boolean)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propDate</strong>:
-                                          <em>required (date-only)
-      </em>
-                                          <p><strong>Example</strong>:</p>
-                                          <div class="examples">
-                                            <pre><code>2015-05-23</code></pre>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <strong>userPicture</strong>:
-                                          <em>required (file)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>NilValue</strong>:
-                                          <em>required (object)
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>name</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>comment</strong>:
-                                              <em>required (nil)
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>CatOrDog</strong>:
-                                          <em>required ([object Object])
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>name</strong>:
-                                              <em>required ([object Object])
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>color</strong>:
-                                              <em>required ([object Object])
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>CatAndDog</strong>:
-                                          <em>required (object)
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>name</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>fangs</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>color</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>PossibleMeetingDate</strong>:
-                                          <em>required (date-only)
-      </em>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <p><strong>RamlDataType</strong></p>
-                                    <div class="items">
-                                      <ul>
-                                        <li>
-                                          <strong>propString</strong>:
-                                          <em>required (string)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propStringArray1</strong>:
-                                          <em>required (array of )
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>ideas</strong>:
-                                          <em>required (array of items)
-      </em>
-                                          <p><strong>Items</strong>: items</p>
-                                          <div class="items">
-                                            <ul>
-                                              <li>
-                                                <strong>comment</strong>:
-                                                <em>required (string)
-      </em>
-                                              </li>
-                                            </ul>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <strong>extIdeas</strong>:
-                                          <em>required (object)
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>comment</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>createdBy</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>feedback</strong>:
-                                          <em>required (string - default: very nice - minLength: 1 - maxLength: 255 - pattern: [a-zA-Z\s]*)
-      </em>
-                                          <p><strong>Example</strong>:</p>
-                                          <div class="examples">
-                                            <pre><code>very well made</code></pre>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <strong>propNumber</strong>:
-                                          <em>required (number - minimum: 0 - maximum: 32)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propInteger</strong>:
-                                          <em>required (integer - minimum: 3 - maximum: 5)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propBoolean</strong>:
-                                          <em>required (boolean)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propDate</strong>:
-                                          <em>required (date-only)
-      </em>
-                                          <p><strong>Example</strong>:</p>
-                                          <div class="examples">
-                                            <pre><code>2015-05-23</code></pre>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <strong>userPicture</strong>:
-                                          <em>required (file)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>NilValue</strong>:
-                                          <em>required (object)
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>name</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>comment</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>CatOrDog</strong>:
-                                          <em>required ([object Object])
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>name</strong>:
-                                              <em>required ([object Object])
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>fangs</strong>:
-                                              <em>required ([object Object])
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>CatAndDog</strong>:
-                                          <em>required (object)
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>name</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>fangs</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>color</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>PossibleMeetingDate</strong>:
-                                          <em>required (date-only)
-      </em>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <p><strong>RamlDataType</strong></p>
-                                    <div class="items">
-                                      <ul>
-                                        <li>
-                                          <strong>propString</strong>:
-                                          <em>required (string)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propStringArray1</strong>:
-                                          <em>required (array of )
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>ideas</strong>:
-                                          <em>required (array of items)
-      </em>
-                                          <p><strong>Items</strong>: items</p>
-                                          <div class="items">
-                                            <ul>
-                                              <li>
-                                                <strong>comment</strong>:
-                                                <em>required (string)
-      </em>
-                                              </li>
-                                            </ul>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <strong>extIdeas</strong>:
-                                          <em>required (object)
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>comment</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>createdBy</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>feedback</strong>:
-                                          <em>required (string - default: very nice - minLength: 1 - maxLength: 255 - pattern: [a-zA-Z\s]*)
-      </em>
-                                          <p><strong>Example</strong>:</p>
-                                          <div class="examples">
-                                            <pre><code>very well made</code></pre>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <strong>propNumber</strong>:
-                                          <em>required (number - minimum: 0 - maximum: 32)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propInteger</strong>:
-                                          <em>required (integer - minimum: 3 - maximum: 5)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propBoolean</strong>:
-                                          <em>required (boolean)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>propDate</strong>:
-                                          <em>required (date-only)
-      </em>
-                                          <p><strong>Example</strong>:</p>
-                                          <div class="examples">
-                                            <pre><code>2015-05-23</code></pre>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <strong>userPicture</strong>:
-                                          <em>required (file)
-      </em>
-                                        </li>
-                                        <li>
-                                          <strong>NilValue</strong>:
-                                          <em>required (object)
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>name</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>comment</strong>:
-                                              <em>required (nil)
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>CatOrDog</strong>:
-                                          <em>required ([object Object])
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>name</strong>:
-                                              <em>required ([object Object])
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>fangs</strong>:
-                                              <em>required ([object Object])
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>CatAndDog</strong>:
-                                          <em>required (object)
-      </em>
-                                          <ul>
-                                            <li>
-                                              <strong>name</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>fangs</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                            <li>
-                                              <strong>color</strong>:
-                                              <em>required (string)
-      </em>
-                                            </li>
-                                          </ul>
-                                        </li>
-                                        <li>
-                                          <strong>PossibleMeetingDate</strong>:
-                                          <em>required (date-only)
-      </em>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </li>
-                                </ul>
-                              </p>
+                              <p><strong>Type</strong>: object</p>
+                              <strong>Properties</strong>
+                              <ul>
+                                <li>
+                                  <strong>propString</strong>:
+                                  <em>required (string)
+      </em>
+                                </li>
+                                <li>
+                                  <strong>propStringArray1</strong>:
+                                  <em>required (array of string)
+      </em>
+                                </li>
+                                <li>
+                                  <strong>ideas</strong>:
+                                  <em>required (array of object)
+      </em>
+                                  <p><strong>Items</strong>: items</p>
+                                  <div class="items">
+                                    <ul>
+                                      <li>
+                                        <strong>comment</strong>:
+                                        <em>required (string)
+      </em>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </li>
+                                <li>
+                                  <strong>extIdeas</strong>:
+                                  <em>required (object)
+      </em>
+                                  <ul>
+                                    <li>
+                                      <strong>comment</strong>:
+                                      <em>required (string)
+      </em>
+                                    </li>
+                                    <li>
+                                      <strong>createdBy</strong>:
+                                      <em>required (string)
+      </em>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <strong>feedback</strong>:
+                                  <em>required (string - default: very nice - minLength: 1 - maxLength: 255 - pattern: [a-zA-Z\s]*)
+      </em>
+                                  <p><strong>Example</strong>:</p>
+                                  <div class="examples">
+                                    <pre><code>very well made</code></pre>
+                                  </div>
+                                </li>
+                                <li>
+                                  <strong>propNumber</strong>:
+                                  <em>required (number - minimum: 0 - maximum: 32)
+      </em>
+                                </li>
+                                <li>
+                                  <strong>propInteger</strong>:
+                                  <em>required (integer - minimum: 3 - maximum: 5)
+      </em>
+                                </li>
+                                <li>
+                                  <strong>propBoolean</strong>:
+                                  <em>required (boolean)
+      </em>
+                                </li>
+                                <li>
+                                  <strong>propDate</strong>:
+                                  <em>required (date-only)
+      </em>
+                                  <p><strong>Example</strong>:</p>
+                                  <div class="examples">
+                                    <pre><code>2015-05-23</code></pre>
+                                  </div>
+                                </li>
+                                <li>
+                                  <strong>userPicture</strong>:
+                                  <em>required (file)
+      </em>
+                                </li>
+                                <li>
+                                  <strong>NilValue</strong>:
+                                  <em>required (object)
+      </em>
+                                  <ul>
+                                    <li>
+                                      <strong>name</strong>:
+                                      <em>required (string)
+      </em>
+                                    </li>
+                                    <li>
+                                      <strong>comment</strong>:
+                                      <em>required (union of
+            string or nil)
+      </em>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <strong>CatOrDog</strong>:
+                                  <em>required (union of
+            ApiLib.Cat or ApiLib.Dog)
+      </em>
+                                </li>
+                                <li>
+                                  <strong>CatAndDog</strong>:
+                                  <em>required (object)
+      </em>
+                                  <ul>
+                                    <li>
+                                      <strong>name</strong>:
+                                      <em>required (string)
+      </em>
+                                    </li>
+                                    <li>
+                                      <strong>fangs</strong>:
+                                      <em>required (string)
+      </em>
+                                    </li>
+                                    <li>
+                                      <strong>color</strong>:
+                                      <em>required (string)
+      </em>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <strong>PossibleMeetingDate</strong>:
+                                  <em>required (date-only)
+      </em>
+                                </li>
+                              </ul>
                             </div>
                             <div class="tab-pane" id="api_post_securedby">
                               <h1>Secured by custom_scheme</h1>
