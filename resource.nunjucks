@@ -174,7 +174,7 @@
                         {% if b.type %}
                           {% if isStandardType(b.type) %}
                             {% if b.type === 'array' and b.items %}
-                              <p><strong>Type</strong>: array of {% if isStandardType(b.items) %}{{ b.items }}{% else %}{{ b.items.displayName }}{% endif %}</p>
+                              <p><strong>Type</strong>: array of {{ b.items.originalType | d(b.items.type) | d(b.items) }}</p>
                             {% elif b.type === 'union' and b.anyOf.length %}
                               <p><strong>Possible types</strong>:
                                 <ul>
@@ -280,7 +280,7 @@
                           {% if b.type %}
                             {% if isStandardType(b.type) %}
                               {% if b.type === 'array' and b.items %}
-                                <p><strong>Type</strong>: array of {% if isStandardType(b.items) %}{{ b.items }}{% else %}{{ b.items.displayName }}{% endif %}</p>
+                                <p><strong>Type</strong>: array of {{ b.items.originalType | d(b.items.type) | d(b.items) }}</p>
                               {% elif b.type === 'union' and b.anyOf.length %}
                                 <p><strong>Possible types</strong>:
                                   <ul>
@@ -402,7 +402,7 @@
                             {% if b.type %}
                               {% if isStandardType(b.type) %}
                                 {% if b.type === 'array' and b.items %}
-                                  <p><strong>Type</strong>: array of {% if isStandardType(b.items) %}{{ b.items }}{% else %}{{ b.items.displayName }}{% endif %}</p>
+                                  <p><strong>Type</strong>: array of {{ b.items.originalType | d(b.items.type) | d(b.items) }}</p>
                                 {% elif b.type === 'union' and b.anyOf.length %}
                                   <p><strong>Possible types</strong>:
                                     <ul>

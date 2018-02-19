@@ -12,8 +12,14 @@
             one of {{ item.enum.join(', ') }}
           {%- endif -%}
         {%- else -%}
-          {%- if item.type === 'array' -%}
-            array of {% if isStandardType(item.items) %}{{ item.items }}{% else %}{{ item.items.displayName }}{% endif %}
+          {%- if item.type === 'array' and item.items -%}
+            array of {{ item.items.originalType | d(item.items.type) }}
+          {%- elif item.type === 'union' and item.anyOf.length -%}
+            union of
+            {% for alt in item.anyOf -%}
+              {{ alt.originalType | d(alt.displayName) | d(alt.type) }}
+              {%- if not loop.last %} or {% endif -%}
+            {%- endfor -%}
           {%- else -%}
             {{ item.type }}
           {%- endif -%}

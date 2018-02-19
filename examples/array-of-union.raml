@@ -1,0 +1,20 @@
+#%RAML 1.0
+title: API used to test broken features
+version: v1
+baseUri: http://api.samplehost.com/broken/{version}
+mediaType: application/json
+protocols: [HTTP, HTTPS]
+
+types:
+  UnionArray:
+    type: array
+    items:
+      type: integer|string
+
+/:
+  get:
+    responses:
+      200:
+        body:
+          type: UnionArray
+          example: ["somevalue",42]
