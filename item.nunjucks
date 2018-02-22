@@ -31,6 +31,8 @@
           {%- if item.minLength or item.minLength == 0 %} - minLength: {{ item.minLength }}{%- endif -%}
           {%- if item.maxLength or item.maxLength == 0 %} - maxLength: {{ item.maxLength }}{%- endif -%}
         {%- else -%}
+          {%- if item.minItems or item.minItems == 0 %} - minItems: {{ item.minItems }}{%- endif -%}
+          {%- if item.maxItems or item.maxItems == 0 %} - maxItems: {{ item.maxItems }}{%- endif -%}
           {%- if item.minimum or item.minimum == 0 %} - minimum: {{ item.minimum }}{%- endif -%}
           {%- if item.maximum or item.maximum == 0 %} - maximum: {{ item.maximum }}{%- endif -%}
         {%- endif -%}
