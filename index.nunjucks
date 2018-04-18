@@ -194,7 +194,9 @@
             <p>{{ baseUri }}</p>
 
             {% if description %}
-              <p>{{ description }}</p>
+              {% markdown %}
+              {{ description }}
+              {% endmarkdown %}
             {% endif %}
 
             {% if baseUriParameters %}
