@@ -4,7 +4,7 @@
     {% if not item.structuredValue %}
       <em>
         {%- if item.required -%}required {% endif -%}
-        (
+
         {%- if item.enum -%}
           {%- if item.enum.length === 1 -%}
             {{ item.enum.join(', ') }}
@@ -15,11 +15,40 @@
           {%- if item.type === 'array' and item.items -%}
             array of {{ item.items.originalType | d(item.items.type) }}
           {%- elif item.type === 'union' and item.anyOf.length -%}
-            union of
-            {% for alt in item.anyOf -%}
-              {{ alt.originalType | d(alt.displayName) | d(alt.type) }}
-              {%- if not loop.last %} or {% endif -%}
-            {%- endfor -%}
+          union
+            <p><strong>Possible types</strong>:
+              <ul>
+                {% for super in item.anyOf|selectattr("properties") %}
+                  <li>
+                    <p><strong>{{ super.displayName }}</strong></p>
+                    <div class="items">
+                      <ul>
+                        {% for item in super.properties %}
+                          {% include "./item.nunjucks" %}
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </li>
+                {% endfor %}
+                {% for super in item.anyOf|rejectattr("properties") %}
+                  <li>
+                    <p><strong>
+                    {%- if super.type === 'array' -%}
+                      array of {{ super.items.type }}
+                    {%- elif super.enum -%}
+                      {%- if super.enum.length === 1 -%}
+                        the literal: {{ super.enum.join(', ') }}
+                      {%- else -%}
+                        one of: {{ super.enum.join(', ') }}
+                      {%- endif -%}
+                    {%- else -%}
+                    {{ super.type }}
+                    {%- endif -%}
+                    </strong></p>
+                  </li>
+                {% endfor %}
+              </ul>
+            </p>
           {%- else -%}
             {{ item.type }}
           {%- endif -%}
@@ -37,7 +66,7 @@
           {%- if item.maximum or item.maximum == 0 %} - maximum: {{ item.maximum }}{%- endif -%}
         {%- endif -%}
         {%- if item.pattern %} - pattern: {{ item.pattern }}{%- endif -%}
-        )
+        
       </em>
     {% endif %}
   {% endif %}
