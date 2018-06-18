@@ -51,6 +51,9 @@
     </script>
 
     <style>
+      pre {
+        max-height:40vh;
+      }
       .hljs {
         background: transparent;
       }
