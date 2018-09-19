@@ -1,11 +1,7 @@
 {
-  "name": "raml2html-default-theme",
+  "name": "everfi-default-theme",
   "description": "The default theme for raml2html",
   "version": "2.8.0",
-  "author": {
-    "name": "Kevin Renskers",
-    "email": "kevin@mixedcase.nl"
-  },
   "bugs": {
     "url": "https://github.com/raml2html/default-theme/issues"
   },
@@ -20,7 +16,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/raml2html/default-theme.git"
+    "url": "git://github.com/everfi/default-theme.git"
   },
   "preferGlobal": true,
   "files": [

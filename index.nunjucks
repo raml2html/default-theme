@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>{{ title }} API documentation</title>
+    <title>{{ title }} Documentation</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="generator" content="https://github.com/raml2html/raml2html {{ config.raml2HtmlVersion }}">
 
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
@@ -182,15 +183,102 @@
       .resource-modal li > ul {
         margin-bottom: 1em;
       }
+
+      // EverFI CSS
+
+body {
+	color: rgba(33,33,33,1);
+	font-family: Lato, Roboto, sans-serif;
+	font-size: 15px;
+}
+
+p {
+	color: rgba(33,33,33,1);
+	font-family: Lato, Roboto, sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.667;
+	word-wrap: break-word;
+}
+
+h1 {
+	color: rgba(34,110,147,1);
+	font-size: 60px;
+	line-height: 1.1;
+	letter-spacing: 2px;
+	font-weight: 300;
+	text-align: center;
+	padding-bottom: 12px;
+}
+
+h1 small{
+	letter-spacing: normal;
+	display: block;
+	padding-top: 12px;
+	padding-bottom: 20px;
+}
+
+h2 {
+	color: rgba(34,110,147,1);
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+h3 {
+	color: rgba(33,33,33,1);
+	font-family: Lato, Roboto, sans-serif;	
+	font-size: 20px;
+	line-height: 1.25;
+	padding-top: 16px;
+	text-decoration: italic;
+}
+
+a {
+	color: rgba(0,122,147,1);
+	text-decoration: underline;
+}
+
+a:visited {
+	color: rgba(0,101,128,1)
+}
+
+span.badge {
+	background-color: #0D7978;
+	color: #FFF;
+	padding: 8px 16px;
+}
+
+span.badge:hover {
+	background-color: #00605F;
+}
+.r9CsCb {
+    max-height: 36px;
+    max-width: 100%;
+}
+paper-dialog *, paper-dialog *:before, paper-dialog *:after, paper-drawer-panel *, paper-drawer-panel *:before, paper-drawer-panel *:after, .fktJzd *, .fktJzd *:before, .fktJzd *:after {
+    -webkit-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+img {
+    border: 0;
+}
+
     </style>
   </head>
 
   <body data-spy="scroll" data-target="#sidebar">
     <div class="container">
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="https://lh3.googleusercontent.com/G6ZiJpy8pUNRyo-HYf3pTNj9rFDVy1AxT8I12RD3qAnuxE4Azl_EL6MHC3rkkygnXuioXSud=w16383" class="r9CsCb" onload="this.setAttribute('data-image-loaded', true)" onerror="this.setAttribute('data-image-error', true)" role="img" aria-hidden="true" data-image-loaded="true">
+        </a>
+      </nav>        
       <div class="row">
         <div class="col-md-9" role="main">
           <div class="page-header">
-            <h1>{{ title }} API documentation{% if version %} <small>version {{ version }}</small>{% endif %}</h1>
+            <h1>{{ title }} Documentation{% if version %} <small>version {{ version }}</small>{% endif %}</h1>
             <p>{{ baseUri }}</p>
 
             {% if description %}
