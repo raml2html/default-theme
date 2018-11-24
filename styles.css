@@ -1,0 +1,176 @@
+html {
+  font-size: 0.875rem;
+}
+
+pre {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #333;
+  display: block;
+  font-size: .8125rem;
+  line-height: 1.42857143;
+  margin: 0 0 10px;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+pre code {
+  overflow: auto;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+#sidebar {
+  height: 90%;
+  margin-top: 30px;
+  overflow: auto;
+  padding-right: 5px;
+}
+
+.alert p {
+  margin-bottom: 0;
+}
+
+.btn {
+  color: white;
+  font-size: .8125rem;
+  line-height: normal;
+  text-transform: uppercase;
+  width: 70px;
+}
+
+.btn .material-icons {
+  font-size: 0.9rem;
+}
+
+.btn_get {
+  background-color: #63a8e2;
+}
+.btn_post {
+  background-color: #6cbd7d;
+}
+.btn_put {
+  background-color: #22bac4;
+}
+.btn_delete {
+  background-color: #d26460;
+}
+.btn_patch {
+  background-color: #ccc444;
+}
+
+.card .card {
+  border-bottom: none;
+}
+
+.card .card:last-child {
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.card-header,
+.card-title {
+  font-size: 1.14rem;
+}
+
+.card-header a,
+.card-title a {
+  color: #212529;
+}
+
+.card-title {
+  line-height: 1.375rem;
+  margin-bottom: 0;
+}
+
+.card-title > .methods {
+  float: right;
+}
+
+.examples {
+  margin-left: 0.5em;
+}
+
+.hljs {
+  background: transparent;
+}
+
+.items {
+  background: #f5f5f5;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: .8125rem;
+  line-height: 1.42857143;
+  margin: 0 0 10px;
+  padding: 9.5px;
+}
+
+.list-group .btn {
+  float: left;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: #f5f5f5;
+}
+
+.list-group-item > .badge {
+  float: none;
+  margin-right: 6px;
+}
+
+.method_description {
+  margin-left: 85px;
+}
+
+.method_description p:last-child {
+  margin: 0;
+}
+
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.parent {
+  color: #999;
+}
+
+.resource-description p:last-child {
+  margin: 0;
+}
+
+.resource-modal li > ul {
+  margin-bottom: 1em;
+}
+
+.tab-pane ul {
+  padding-left: 2em;
+}
+
+.tab-pane h1 {
+  font-size: 1.3em;
+}
+
+.tab-pane h2 {
+  border-bottom: 1px solid #ddd;
+  font-size: 1.2em;
+  padding-bottom: 4px;
+}
+
+.tab-pane h3 {
+  font-size: 1.1em;
+}
+
+.tab-content {
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding: 10px;
+}

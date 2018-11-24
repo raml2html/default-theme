@@ -1,0 +1,13 @@
+{% macro markdownText(text) %}
+  {% if text %}
+    {% markdown %}
+      {{ text }}
+    {% endmarkdown %}
+  {% endif %}
+{% endmacro %}
+
+{% macro secured(securedBy) %}
+  {% if securedBy.length %}
+    <i class="fas fa-lock"></i>
+  {% endif %}
+{% endmacro %}
