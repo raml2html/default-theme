@@ -1,4 +1,4 @@
-{% import './macros.njk' as macros %}
+{% import './macros.nunjucks' as macros %}
 
 {% if (resource.methods or (resource.description and resource.parentUrl)) %}
   <div class="card resource-modal">

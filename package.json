@@ -9,9 +9,6 @@
   "bugs": {
     "url": "https://github.com/raml2html/default-theme/issues"
   },
-  "devDependencies": {
-    "glob": "7.1.x"
-  },
   "homepage": "https://github.com/raml2html/default-theme",
   "keywords": [
     "RAML",
@@ -31,6 +28,9 @@
   ],
   "engines": {
     "node": ">=4"
+  },
+  "devDependencies": {
+    "glob": "7.1.x"
   },
   "dependencies": {}
 }
