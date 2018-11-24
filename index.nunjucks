@@ -68,11 +68,13 @@
 
         <div class="col-md-3">
           <div id="sidebar" class="d-print-none" role="complementary">
-            <ul class="nav flex-column">
-              {% for resource in resources %}
-                <li class="nav-item"><a class="nav-link" href="#{{ resource.uniqueId}}">{% if resource.displayName %}{{ resource.displayName }}{% else %}{{ resource.relativeUri }}{% endif %}</a></li>
-              {% endfor %}
-            </ul>
+            <nav id="nav">
+              <ul class="nav nav-pills flex-column">
+                {% for resource in resources %}
+                  <li class="nav-item"><a class="nav-link" href="#{{ resource.uniqueId}}">{% if resource.displayName %}{{ resource.displayName }}{% else %}{{ resource.relativeUri }}{% endif %}</a></li>
+                {% endfor %}
+              </ul>
+            </nav>
           </div>
         </div>
       </div>

@@ -10,8 +10,8 @@
 
         <span class="methods">
           {% for method in resource.methods %}
-            <a href="#{{ resource.uniqueId }}_{{ method.method }}"><!-- modal shown by hashchange event -->
-              <span class="btn btn-sm btn_{{ method.method }}">{{ method.method }}{{ macros.secured(method.securedBy) }}</span>
+            <a href="#{{ resource.uniqueId }}_{{ method.method }}" class="btn btn-sm btn_{{ method.method }}"><!-- modal shown by hashchange event -->
+              {{ method.method }}{{ macros.secured(method.securedBy) }}
             </a>
           {% endfor %}
         </span>
@@ -55,7 +55,7 @@
                 <span class="btn btn-sm btn_{{ method.method }}">{{ method.method }}{{ macros.secured(method.securedBy) }}</span>
                 <span class="parent">{{ resource.parentUrl }}</span>{{ resource.relativeUri }}
               </h4>
-              <button type="button" class="close" aria-label="Close">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>

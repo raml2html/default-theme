@@ -24,7 +24,7 @@ pre code {
 
 #sidebar {
   height: 90%;
-  margin-top: 30px;
+  margin-top: 40px;
   overflow: auto;
   padding-right: 5px;
 }
@@ -34,15 +34,10 @@ pre code {
 }
 
 .btn {
-  color: white;
   font-size: .8125rem;
   line-height: normal;
   text-transform: uppercase;
   width: 70px;
-}
-
-.btn .material-icons {
-  font-size: 0.9rem;
 }
 
 .btn_get {

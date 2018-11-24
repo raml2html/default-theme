@@ -32,7 +32,7 @@ pre code {
 }
 #sidebar {
   height: 90%;
-  margin-top: 30px;
+  margin-top: 40px;
   overflow: auto;
   padding-right: 5px;
 }
@@ -40,14 +40,10 @@ pre code {
   margin-bottom: 0;
 }
 .btn {
-  color: white;
   font-size: .8125rem;
   line-height: normal;
   text-transform: uppercase;
   width: 70px;
-}
-.btn .material-icons {
-  font-size: 0.9rem;
 }
 .btn_get {
   background-color: #63a8e2;
@@ -191,20 +187,17 @@ pre code {
                       <span class="parent"></span>/api
                     </a>
                     <span class="methods">
-            <a href="#api_get">
+            <a href="#api_get" class="btn btn-sm btn_get">
 <!-- modal shown by hashchange event -->
-              <span class="btn btn-sm btn_get">get
+              get
     <i class="fas fa-lock"></i>
-</span>
-                    </a>
-                    <a href="#api_post">
-
-                      <!-- modal shown by hashchange event -->
-                      <span class="btn btn-sm btn_post">post
+            </a>
+            <a href="#api_post" class="btn btn-sm btn_post">
+<!-- modal shown by hashchange event -->
+              post
     <i class="fas fa-lock"></i>
-</span>
-                    </a>
-                    </span>
+            </a>
+        </span>
                   </h4>
                 </div>
                 <div id="card_api" class="card-collapse collapse">
@@ -239,7 +232,7 @@ pre code {
 </span>
                           <span class="parent"></span>/api
                         </h4>
-                        <button type="button" class="close" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
@@ -307,7 +300,7 @@ pre code {
 </span>
                           <span class="parent"></span>/api
                         </h4>
-                        <button type="button" class="close" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
@@ -502,20 +495,17 @@ pre code {
                       <span class="parent"></span>/entry
                     </a>
                     <span class="methods">
-            <a href="#entry_post">
+            <a href="#entry_post" class="btn btn-sm btn_post">
 <!-- modal shown by hashchange event -->
-              <span class="btn btn-sm btn_post">post
+              post
     <i class="fas fa-lock"></i>
-</span>
-                    </a>
-                    <a href="#entry_get">
-
-                      <!-- modal shown by hashchange event -->
-                      <span class="btn btn-sm btn_get">get
+            </a>
+            <a href="#entry_get" class="btn btn-sm btn_get">
+<!-- modal shown by hashchange event -->
+              get
     <i class="fas fa-lock"></i>
-</span>
-                    </a>
-                    </span>
+            </a>
+        </span>
                   </h4>
                 </div>
                 <div id="card_entry" class="card-collapse collapse">
@@ -551,7 +541,7 @@ pre code {
 </span>
                           <span class="parent"></span>/entry
                         </h4>
-                        <button type="button" class="close" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
@@ -631,7 +621,7 @@ pre code {
 </span>
                           <span class="parent"></span>/entry
                         </h4>
-                        <button type="button" class="close" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
@@ -698,20 +688,17 @@ pre code {
                       <span class="parent"></span>/songs
                     </a>
                     <span class="methods">
-            <a href="#songs_get">
+            <a href="#songs_get" class="btn btn-sm btn_get">
 <!-- modal shown by hashchange event -->
-              <span class="btn btn-sm btn_get">get
+              get
     <i class="fas fa-lock"></i>
-</span>
-                    </a>
-                    <a href="#songs_post">
-
-                      <!-- modal shown by hashchange event -->
-                      <span class="btn btn-sm btn_post">post
+            </a>
+            <a href="#songs_post" class="btn btn-sm btn_post">
+<!-- modal shown by hashchange event -->
+              post
     <i class="fas fa-lock"></i>
-</span>
-                    </a>
-                    </span>
+            </a>
+        </span>
                   </h4>
                 </div>
                 <div id="card_songs" class="card-collapse collapse">
@@ -746,7 +733,7 @@ pre code {
 </span>
                           <span class="parent"></span>/songs
                         </h4>
-                        <button type="button" class="close" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
@@ -838,7 +825,7 @@ pre code {
 </span>
                           <span class="parent"></span>/songs
                         </h4>
-                        <button type="button" class="close" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
@@ -899,13 +886,12 @@ pre code {
                       <span class="parent">/songs</span>/{songId}
                     </a>
                     <span class="methods">
-            <a href="#songs__songid__get">
+            <a href="#songs__songid__get" class="btn btn-sm btn_get">
 <!-- modal shown by hashchange event -->
-              <span class="btn btn-sm btn_get">get
+              get
     <i class="fas fa-lock"></i>
-</span>
-                    </a>
-                    </span>
+            </a>
+        </span>
                   </h4>
                 </div>
                 <div id="card_songs__songid_" class="card-collapse collapse">
@@ -932,7 +918,7 @@ pre code {
 </span>
                           <span class="parent">/songs</span>/{songId}
                         </h4>
-                        <button type="button" class="close" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
@@ -1061,11 +1047,13 @@ pre code {
         </div>
         <div class="col-md-3">
           <div id="sidebar" class="d-print-none" role="complementary">
-            <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="#api">/api</a></li>
-              <li class="nav-item"><a class="nav-link" href="#entry">/entry</a></li>
-              <li class="nav-item"><a class="nav-link" href="#songs">Songs</a></li>
-            </ul>
+            <nav id="nav">
+              <ul class="nav nav-pills flex-column">
+                <li class="nav-item"><a class="nav-link" href="#api">/api</a></li>
+                <li class="nav-item"><a class="nav-link" href="#entry">/entry</a></li>
+                <li class="nav-item"><a class="nav-link" href="#songs">Songs</a></li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
@@ -1104,6 +1092,9 @@ pre code {
             }
           } catch (e) {}
         });
+        $('body').scrollspy({
+          target: '#sidebar'
+        })
       });
     </script>
   </body>

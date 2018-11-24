@@ -32,4 +32,6 @@ $(document).ready(function() {
       }
     } catch(e) {}
   });
+
+  $('body').scrollspy({ target: '#sidebar' })
 });
