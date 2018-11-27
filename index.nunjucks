@@ -15,9 +15,8 @@
     <script type="text/javascript">
       {% include "scripts.js" %}
     </script>
-      {% include "styles.css" %}
     <style>
-
+      {% include "styles.css" %}
     </style>
   </head>
 
