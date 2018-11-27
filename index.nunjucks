@@ -1,20 +1,17 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>{{ title }} API documentation</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="generator" content="https://github.com/raml2html/raml2html {{ config.raml2HtmlVersion }}">
 
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-
-    <script type="text/javascript">
-      {% include "./scripts.js" %}
-    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
       {% include "./styles.css" %}
     </style>
@@ -25,13 +22,13 @@
       <div class="row">
         <div class="col-md-9" role="main">
           <div class="page-header">
-            <h1>{{ title }} API documentation{% if version %} <small>version {{ version }}</small>{% endif %}</h1>
+            <h1>{{ title }} API documentation{% if version %} <small class="text-muted">version {{ version }}</small>{% endif %}</h1>
             <p>{{ baseUri }}</p>
 
             {% if description %}
-              {% markdown %}
-              {{ description }}
-              {% endmarkdown %}
+{% markdown %}
+{{ description }}
+{% endmarkdown %}
             {% endif %}
 
             {% if baseUriParameters %}
@@ -51,12 +48,10 @@
           </div>
 
           {% for resource in resources %}
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 id="{{ resource.uniqueId }}" class="panel-title">{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</h3>
-              </div>
+            <div class="card mb-3">
+                <h3 id="{{ resource.uniqueId }}" class="card-header">{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</h3>
 
-              <div class="panel-body">
+              <div class="card-body">
                 {% if resource.description %}
                   <div class="top-resource-description">
 {% markdown %}
@@ -65,24 +60,34 @@
                   </div>
                 {% endif %}
 
-                <div class="panel-group">
                   {% include "./resource.nunjucks" %}
-                </div>
               </div>
             </div>
           {% endfor %}
         </div>
 
         <div class="col-md-3">
-          <div id="sidebar" class="hidden-print affix" role="complementary">
-            <ul class="nav nav-pills nav-stacked">
-              {% for resource in resources %}
-                <li><a href="#{{ resource.uniqueId}}">{% if resource.displayName %}{{ resource.displayName }}{% else %}{{ resource.relativeUri }}{% endif %}</a></li>
-              {% endfor %}
-            </ul>
+          <div id="sidebar" class="d-print-none" role="complementary">
+            <nav id="nav">
+              <ul class="nav nav-pills flex-column">
+                {% for resource in resources %}
+                  <li class="nav-item"><a class="nav-link" href="#{{ resource.uniqueId}}">{% if resource.displayName %}{{ resource.displayName }}{% else %}{{ resource.relativeUri }}{% endif %}</a></li>
+                {% endfor %}
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript">
+      {% include "./scripts.js" %}
+    </script>
   </body>
 </html>

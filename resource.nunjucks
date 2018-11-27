@@ -1,23 +1,24 @@
 {% if (resource.methods or (resource.description and resource.parentUrl)) %}
-  <div class="panel panel-white resource-modal">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" href="#panel_{{ resource.uniqueId }}">
+
+  <div class="card resource-modal">
+    <div class="card-header bg-white">
+      <h4 class="card-title">
+        <a class="collapsed" data-toggle="collapse" href="#card_{{ resource.uniqueId }}">
           <span class="parent">{{ resource.parentUrl }}</span>{{ resource.relativeUri }}
         </a>
 
         <span class="methods">
           {% for method in resource.methods %}
-            <a href="#{{ resource.uniqueId }}_{{ method.method }}"><!-- modal shown by hashchange event -->
-              <span class="badge badge_{{ method.method }}">{{ method.method }}{% if method.securedBy.length %} <span class="glyphicon glyphicon-lock" title="Authentication required"></span>{% endif %}</span>
+            <a href="#{{ resource.uniqueId }}_{{ method.method }}" class="btn btn-sm btn_{{ method.method }}"><!-- modal shown by hashchange event -->
+              {{ method.method }}{% if securedBy.length %}<i class="fas fa-fw fa-lock" title="Authentication required"></i>{% endif %}
             </a>
           {% endfor %}
         </span>
       </h4>
     </div>
 
-    <div id="panel_{{ resource.uniqueId }}" class="panel-collapse collapse">
-      <div class="panel-body">
+    <div id="card_{{ resource.uniqueId }}" class="card-collapse collapse">
+      <div class="card-body">
         {% if resource.parentUrl %}
           {% if resource.description %}
             <div class="resource-description">
@@ -31,7 +32,7 @@
         <div class="list-group">
           {% for method in resource.methods %}
             <div onclick="window.location.href = '#{{ resource.uniqueId }}_{{ method.method }}'" class="list-group-item">
-              <span class="badge badge_{{ method.method }}">{{ method.method }}{% if method.securedBy.length %} <span class="glyphicon glyphicon-lock" title="Authentication required"></span>{% endif %}</span>
+              <span class="btn btn-sm btn_{{ method.method }}">{{ method.method }}{% if securedBy.length %}<i class="fas fa-fw fa-lock" title="Authentication required"></i>{% endif %}</span>
               <div class="method_description">
 {% markdown %}
 {{ method.description}}
@@ -49,11 +50,13 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               <h4 class="modal-title" id="myModalLabel">
-                <span class="badge badge_{{ method.method }}">{{ method.method }}{% if method.securedBy.length %} <span class="glyphicon glyphicon-lock" title="Authentication required"></span>{% endif %}</span>
+                <span class="btn btn-sm btn_{{ method.method }}">{{ method.method }}{% if securedBy.length %}<i class="fas fa-fw fa-lock" title="Authentication required"></i>{% endif %}</span>
                 <span class="parent">{{ resource.parentUrl }}</span>{{ resource.relativeUri }}
               </h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
 
             <div class="modal-body">
@@ -70,7 +73,7 @@
                   {% if securedBy %}
                     <div class="alert alert-warning">
                       {% set securityScheme = securitySchemes[securedBy.schemeName] %}
-                      <span class="glyphicon glyphicon-lock" title="Authentication required"></span>
+                      <i class="fas fa-lock" title="Authentication required"></i>
                       Secured by <b>{{securityScheme.displayName}}</b>
                       {% if securedBy.scopes %}
                         with scopes:
@@ -91,28 +94,29 @@
               {% endif %}
 
               <!-- Nav tabs -->
-              <ul class="nav nav-tabs">
+              <ul class="nav nav-tabs" role="tablist">
                 {% if method.allUriParameters.length or method.queryString or method.queryParameters or method.headers or method.body or method.annotations.length %}
-                  <li class="active">
-                    <a href="#{{ resource.uniqueId }}_{{ method.method }}_request" data-toggle="tab">Request</a>
+                  <li class="nav-item">
+                    <a href="#{{ resource.uniqueId }}_{{ method.method }}_request" class="nav-link active" data-toggle="tab">Request</a>
                   </li>
                 {% endif %}
 
                 {% if method.responses %}
-                  <li{%
+                  <li class="nav-item">
+                    <a href="#{{ resource.uniqueId }}_{{ method.method }}_response" data-toggle="tab"{%
                     if not method.allUriParameters.length and not method.queryParameters
                     and not method.queryString
                     and not method.headers and not method.body and not method.annotations.length
-                    %} class="active"{%
+                    %} class="active nav-link"{%
+                    else %} class="nav-link"{%
                     endif
-                    %}>
-                    <a href="#{{ resource.uniqueId }}_{{ method.method }}_response" data-toggle="tab">Response</a>
+                    %}>Response</a>
                   </li>
                 {% endif %}
 
                 {% if method.securedBy.length %}
-                  <li>
-                    <a href="#{{ resource.uniqueId }}_{{ method.method }}_securedby" data-toggle="tab">Security</a>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#{{ resource.uniqueId }}_{{ method.method }}_securedby" data-toggle="tab">Security</a>
                   </li>
                 {% endif %}
               </ul>
