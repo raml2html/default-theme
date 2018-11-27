@@ -1,7 +1,7 @@
 {
   "name": "raml2html-default-theme",
   "description": "The default theme for raml2html",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "author": {
     "name": "Kevin Renskers",
     "email": "kevin@mixedcase.nl"
@@ -27,7 +27,9 @@
     "index.nunjucks",
     "resource.nunjucks",
     "item.nunjucks",
-    "examples.nunjucks"
+    "examples.nunjucks",
+    "scripts.js",
+    "styles.css"
   ],
   "engines": {
     "node": ">=4"
