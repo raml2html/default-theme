@@ -4,12 +4,12 @@
     <title>Hello world API documentation</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="generator" content="https://github.com/raml2html/raml2html 7.0.0">
+    <meta name="generator" content="https://github.com/raml2html/raml2html 7.2.1">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         $('.page-header pre code, .top-resource-description pre code, .modal-body pre code').each(function(i, block) {
@@ -44,137 +44,140 @@
     </script>
     <style>
       .hljs {
-        background: transparent;
-      }
-      .parent {
-        color: #999;
-      }
-      .list-group-item>.badge {
-        float: none;
-        margin-right: 6px;
-      }
-      .panel-title>.methods {
-        float: right;
-      }
-      .badge {
-        border-radius: 0;
-        text-transform: uppercase;
-        width: 70px;
-        font-weight: normal;
-        color: #f3f3f6;
-        line-height: normal;
-      }
-      .badge_get {
-        background-color: #63a8e2;
-      }
-      .badge_post {
-        background-color: #6cbd7d;
-      }
-      .badge_put {
-        background-color: #22bac4;
-      }
-      .badge_delete {
-        background-color: #d26460;
-      }
-      .badge_patch {
-        background-color: #ccc444;
-      }
-      .list-group,
-      .panel-group {
-        margin-bottom: 0;
-      }
-      .panel-group .panel+.panel-white {
-        margin-top: 0;
-      }
-      .panel-group .panel-white {
-        border-bottom: 1px solid #F5F5F5;
-        border-radius: 0;
-      }
-      .panel-white:last-child {
-        border-bottom-color: white;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-      }
-      .panel-white .panel-heading {
-        background: white;
-      }
-      .tab-pane ul {
-        padding-left: 2em;
-      }
-      .tab-pane h1 {
-        font-size: 1.3em;
-      }
-      .tab-pane h2 {
-        font-size: 1.2em;
-        padding-bottom: 4px;
-        border-bottom: 1px solid #ddd;
-      }
-      .tab-pane h3 {
-        font-size: 1.1em;
-      }
-      .tab-content {
-        border-left: 1px solid #ddd;
-        border-right: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-        padding: 10px;
-      }
-      #sidebar {
-        margin-top: 30px;
-        padding-right: 5px;
-        overflow: auto;
-        height: 90%;
-      }
-      .top-resource-description {
-        border-bottom: 1px solid #ddd;
-        background: #fcfcfc;
-        padding: 15px 15px 0 15px;
-        margin: -15px -15px 10px -15px;
-      }
-      .resource-description {
-        border-bottom: 1px solid #fcfcfc;
-        background: #fcfcfc;
-        padding: 15px 15px 0 15px;
-        margin: -15px -15px 10px -15px;
-      }
-      .resource-description p:last-child {
-        margin: 0;
-      }
-      .list-group .badge {
-        float: left;
-      }
-      .method_description {
-        margin-left: 85px;
-      }
-      .method_description p:last-child {
-        margin: 0;
-      }
-      .list-group-item {
-        cursor: pointer;
-      }
-      .list-group-item:hover {
-        background-color: #f5f5f5;
-      }
-      pre code {
-        overflow: auto;
-        word-wrap: normal;
-        white-space: pre;
-      }
-      .items {
-        background: #f5f5f5;
-        color: #333;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 9.5px;
-        margin: 0 0 10px;
-        font-size: 13px;
-        line-height: 1.42857143;
-      }
-      .examples {
-        margin-left: 0.5em;
-      }
-      .resource-modal li>ul {
-        margin-bottom: 1em;
-      }
+  background: transparent;
+}
+.parent {
+  color: #999;
+}
+.list-group-item > .badge {
+  float: none;
+  margin-right: 6px;
+}
+.panel-title > .methods {
+  float: right;
+}
+.badge {
+  border-radius: 0;
+  text-transform: uppercase;
+  width: 70px;
+  font-weight: normal;
+  color: #f3f3f6;
+  line-height: normal;
+}
+.badge_get {
+  background-color: #63a8e2;
+}
+.badge_post {
+  background-color: #6cbd7d;
+}
+.badge_put {
+  background-color: #22bac4;
+}
+.badge_delete {
+  background-color: #d26460;
+}
+.badge_patch {
+  background-color: #ccc444;
+}
+.list-group,
+.panel-group {
+  margin-bottom: 0;
+}
+.panel-group .panel+.panel-white {
+  margin-top: 0;
+}
+.panel-group .panel-white {
+  border-bottom: 1px solid #F5F5F5;
+  border-radius: 0;
+}
+.panel-white:last-child {
+  border-bottom-color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.panel-white .panel-heading {
+  background: white;
+}
+.tab-pane ul {
+  padding-left: 2em;
+}
+.tab-pane h1 {
+  font-size: 1.3em;
+}
+.tab-pane h2 {
+  font-size: 1.2em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #ddd;
+}
+.tab-pane h3 {
+  font-size: 1.1em;
+}
+.tab-content {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+#sidebar {
+  margin-top: 30px;
+  padding-right: 5px;
+  overflow: auto;
+  height: 90%;
+}
+.top-resource-description {
+  border-bottom: 1px solid #ddd;
+  background: #fcfcfc;
+  padding: 15px 15px 0 15px;
+  margin: -15px -15px 10px -15px;
+}
+.resource-description {
+  border-bottom: 1px solid #fcfcfc;
+  background: #fcfcfc;
+  padding: 15px 15px 0 15px;
+  margin: -15px -15px 10px -15px;
+}
+.resource-description p:last-child {
+  margin: 0;
+}
+.list-group .badge {
+  float: left;
+}
+.method_description {
+  margin-left: 85px;
+}
+.method_description p:last-child {
+  margin: 0;
+}
+.list-group-item {
+  cursor: pointer;
+}
+.list-group-item:hover {
+  background-color: #f5f5f5;
+}
+pre code {
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
+.items {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+}
+.examples {
+  margin-left: 0.5em;
+}
+.resource-modal li > ul {
+  margin-bottom: 1em;
+}
+.required {
+  color: #f00;
+}
     </style>
   </head>
   <body data-spy="scroll" data-target="#sidebar">
@@ -182,25 +185,19 @@
       <div class="row">
         <div class="col-md-9" role="main">
           <div class="page-header">
-            <h1>Hello world API documentation
-              <small>version 1</small>
-            </h1>
+            <h1>Hello world API documentation <small>version 1</small></h1>
             <p>http://example.com/{version}</p>
             <ul>
               <li>
                 <strong>version</strong>:
-                <em>required (1)
+                <em><span class="required">required </span>(1)
       </em>
               </li>
             </ul>
-            <h3 id="welcome">
-              <a href="#welcome">Welcome</a>
-            </h3>
-            <p>Welcome to the Example Documentation. The Example API allows you to do stuff. See also
-              <a href="https://www.example.com">example.com</a>.</p>
-            <h3 id="chapter_two">
-              <a href="#chapter_two">Chapter two</a>
-            </h3>
+            <h3 id="welcome"><a href="#welcome">Welcome</a></h3>
+            <p>Welcome to the Example Documentation. The Example API allows you
+              to do stuff. See also <a href="https://www.example.com">example.com</a>.</p>
+            <h3 id="chapter_two"><a href="#chapter_two">Chapter two</a></h3>
             <p>More content here. Including <strong>bold</strong> text!</p>
           </div>
           <div class="panel panel-default">
@@ -260,9 +257,7 @@
                           <!-- Tab panes -->
                           <div class="tab-content">
                             <div class="tab-pane active" id="helloworld_get_response">
-                              <h2>HTTP status code
-                                <a href="http://httpstatus.es/200" target="_blank">200</a>
-                              </h2>
+                              <h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2>
                               <h3>Body</h3>
                               <p><strong>Media type</strong>: application/json</p>
                               <p><strong>Type</strong>:</p>
@@ -406,7 +401,7 @@
                               <ul>
                                 <li>
                                   <strong>id</strong>:
-                                  <em>required (string - minLength: 1 - maxLength: 10)
+                                  <em><span class="required">required </span>(string - minLength: 1 - maxLength: 10)
       </em>
                                   <p>account identifier</p>
                                 </li>
@@ -415,7 +410,7 @@
                               <ul>
                                 <li>
                                   <strong>Authorization</strong>:
-                                  <em>required (string)
+                                  <em><span class="required">required </span>(string)
       </em>
                                   <p>Basic authentication header</p>
                                   <p><strong>Example</strong>:</p>
@@ -457,7 +452,7 @@
                               <ul>
                                 <li>
                                   <strong>id</strong>:
-                                  <em>required (string - minLength: 1 - maxLength: 10)
+                                  <em><span class="required">required </span>(string - minLength: 1 - maxLength: 10)
       </em>
                                   <p>account identifier</p>
                                 </li>
@@ -469,26 +464,24 @@
                               <ul>
                                 <li>
                                   <strong>name</strong>:
-                                  <em>required (string)
+                                  <em><span class="required">required </span>(string)
       </em>
                                   <p>name on account</p>
                                   <p><strong>Examples</strong>:</p>
                                   <div class="examples">
                                     <p>
-                                      <strong>example1</strong>:
-                                      <br />
+                                      <strong>example1</strong>:<br />
                                     </p>
                                     <pre><code>Naruto Uzumaki</code></pre>
                                     <p>
-                                      <strong>example2</strong>:
-                                      <br />
+                                      <strong>example2</strong>:<br />
                                     </p>
                                     <pre><code>Kevin Renskers</code></pre>
                                   </div>
                                 </li>
                                 <li>
                                   <strong>gender</strong>:
-                                  <em>required (one of male, female)
+                                  <em><span class="required">required </span>(one of male, female)
       </em>
                                 </li>
                               </ul>
@@ -506,9 +499,7 @@
         <div class="col-md-3">
           <div id="sidebar" class="hidden-print affix" role="complementary">
             <ul class="nav nav-pills nav-stacked">
-              <li>
-                <a href="#helloworld">/helloworld</a>
-              </li>
+              <li><a href="#helloworld">/helloworld</a></li>
             </ul>
           </div>
         </div>
