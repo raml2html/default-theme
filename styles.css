@@ -130,3 +130,6 @@ pre code {
 .resource-modal li > ul {
   margin-bottom: 1em;
 }
+.required {
+  color: #f00;
+}
