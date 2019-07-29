@@ -1,0 +1,43 @@
+<div class="panel-collapse collapse" id="{{refId}}" >
+    <div class="panel-body">
+        <div class="panel panel-default" >
+            <h3 class="panel-heading">
+                <strong>{{title}}</strong> ({{titleType}})
+            </h3>
+            <div class="panel-body">
+                <div class="items">
+                    <ul>
+                        {%- if item.items.displayName and fromFile == "array"-%}
+                            {%- if item.items.properties or item.items.examples.length -%}
+                                {%- if item.items.properties -%}
+                                    {%- for item in item.items.properties -%}
+                                        {%- include "./item.nunjucks" -%}
+                                    {%- endfor -%}
+                                {%- endif -%}
+
+                                {# Sub-item Examples #}
+                                {% set parent = item.items %}
+                                {% include "./examples.nunjucks" %}
+                            {%- elif item.items.items -%}
+                                {%- if item.items.type === 'array' -%}
+                                    {%- set item = item.items -%}
+                                    ({%- include "./array.nunjucks" -%})
+                                {%- endif -%}
+                            {% endif %}
+                        {%-elif item.items.displayName and fromFile == "union" -%}
+                            {%- if item.items -%}
+                                    ({%- include "./array.nunjucks" -%})
+                            {% endif %}
+                        {%- else -%}
+                            {%- if item.items -%}
+                                {%- if item.type === 'array' -%}
+                                    ({%- include "./array.nunjucks" -%})
+                                {%- endif -%}
+                            {% endif %}
+                        {%- endif -%}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

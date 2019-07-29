@@ -1,120 +1,27 @@
 <li>
-  <strong>{{ item.key }}</strong>{% if item.type !== nil %}:
-
-    {% if not item.structuredValue %}
+  <strong>{{- item.key -}} </strong>
+  {%- if item.type !== nil -%}:
+    {% if not item.structuredValue -%}
       <em>
         {%- if item.required -%}<span class="required">required </span>{%- endif -%}
+        (
         {%- if item.enum -%}
-          {%- if item.enum.length === 1 -%}
-            the literal: {{ item.enum.join(', ') }}
-          {%- else -%}
-            one of: {{ item.enum.join(', ') }}
-          {%- endif -%}
+          {%- include "./enum.nunjucks" -%}
+        {%- elif item.type === 'array' -%}
+          {%- include "./array.nunjucks" -%}
+        {%- elif item.type === 'union' and item.anyOf.length -%}
+          union of
+          {% for super in item.anyOf -%}
+            {%- include "./union.nunjucks" -%}
+          {%- endfor %}
         {%- else -%}
-          {%- if item.type === 'array' -%}
-            array of
-            {% if isStandardType(item.items) %}
-              {{ item.items }}
-            {% elif item.items.type === 'union' and item.items.anyOf.length %}
-              union
-              <p><strong>Possible types</strong>:
-                <ul>
-                  {% for super in item.items.anyOf|selectattr("properties") %}
-                    <li>
-                      <p><strong>{{ super.displayName }}</strong></p>
-                      <div class="items">
-                        <ul>
-                          {% for item in super.properties %}
-                            {% include "./item.nunjucks" %}
-                          {% endfor %}
-                        </ul>
-                      </div>
-                    </li>
-                  {% endfor %}
-                  {% for super in item.items.anyOf|rejectattr("properties") %}
-                    <li>
-                      <p><strong>
-                      {%- if super.type === 'array' -%}
-                        array of {{ super.items.type }}
-                      {%- elif super.enum -%}
-                        {%- if super.enum.length === 1 -%}
-                          the literal: {{ super.enum.join(', ') }}
-                        {%- else -%}
-                          one of: {{ super.enum.join(', ') }}
-                        {%- endif -%}
-                      {%- else -%}
-                      {{ super.type }}
-                      {%- endif -%}
-                      </strong></p>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </p>
-            {%else%}
-              {{ item.items.displayName }} ({{ item.items.type }}
-              {%- if item.type == 'string' -%}
-                {%- if item.items.minLength or item.items.minLength == 0 %} - minLength: {{ item.items.minLength }}{%- endif -%}
-                {%- if item.items.maxLength or item.items.maxLength == 0 %} - maxLength: {{ item.items.maxLength }}{%- endif -%}
-              {%- else -%}
-                {%- if item.items.minimum or item.items.minimum == 0 %} - minimum: {{ item.items.minimum }}{%- endif -%}
-                {%- if item.items.maximum or item.items.maximum == 0 %} - maximum: {{ item.items.maximum }}{%- endif -%}
-              {%- endif -%})
-            {% endif %}
-          {% elif item.type === 'union' and item.anyOf.length %}
-            union
-            <p><strong>Possible types</strong>:
-              <ul>
-                {% for super in item.anyOf|selectattr("properties") %}
-                  <li>
-                    <p><strong>{{ super.displayName }}</strong></p>
-                    <div class="items">
-                      <ul>
-                        {% for item in super.properties %}
-                          {% include "./item.nunjucks" %}
-                        {% endfor %}
-                      </ul>
-                    </div>
-                  </li>
-                {% endfor %}
-                {% for super in item.anyOf|rejectattr("properties") %}
-                  <li>
-                    <p><strong>
-                    {%- if super.type === 'array' -%}
-                      array of {{ super.items.type }}
-                    {%- elif super.enum -%}
-                      {%- if super.enum.length === 1 -%}
-                        the literal: {{ super.enum.join(', ') }}
-                      {%- else -%}
-                        one of: {{ super.enum.join(', ') }}
-                      {%- endif -%}
-                    {%- else -%}
-                    {{ super.type }}
-                    {%- endif -%}
-                    </strong></p>
-                  </li>
-                {% endfor %}
-              </ul>
-            </p>
-          {%- else -%}
-            {{ item.type }}
-          {%- endif -%}
+          {{ item.type -}}
+          {%- include "./facets.nunjucks"-%}
         {%- endif -%}
-
-        {%- if item.default or item.default == 0 or item.default == false %} - default: {{ item.default }}{%- endif -%}
-        {%- if item.repeat %} - repeat: {{ item.repeat }}{%- endif -%}
-        {%- if item.type == 'string' -%}
-          {%- if item.minLength or item.minLength == 0 %} - minLength: {{ item.minLength }}{%- endif -%}
-          {%- if item.maxLength or item.maxLength == 0 %} - maxLength: {{ item.maxLength }}{%- endif -%}
-        {%- else -%}
-          {%- if item.minItems or item.minItems == 0 %} - minItems: {{ item.minItems }}{%- endif -%}
-          {%- if item.maxItems or item.maxItems == 0 %} - maxItems: {{ item.maxItems }}{%- endif -%}
-          {%- if item.minimum or item.minimum == 0 %} - minimum: {{ item.minimum }}{%- endif -%}
-          {%- if item.maximum or item.maximum == 0 %} - maximum: {{ item.maximum }}{%- endif -%}
-        {%- endif -%}
-        {%- if item.pattern %} - pattern: {{ item.pattern }}{%- endif -%}
+        )
       </em>
     {% endif %}
-  {% endif %}
+  {%- endif -%}
 
 {% markdown %}
 {{ item.description }}
@@ -124,35 +31,9 @@
   <h3>Annotations</h3>
   <ul>
     {% for item in item.annotations %}
-    {% include "./item.nunjucks" %}
+      {% include "./item.nunjucks" %}
     {% endfor %}
   </ul>
-  {% endif %}
-
-  {% if item.items and item.items.properties %}
-    {% if isStandardType(item.items) %}
-      <p><strong>Items</strong>: {{ item.items }}</p>
-    {% endif %}
-
-    {% if not isStandardType(item.items) %}
-      <p><strong>Items</strong>: {{ item.items.displayName }}</p>
-
-      {% if item.items.properties or item.items.examples.length %}
-        <div class="items">
-          {% if item.items.properties %}
-            <ul>
-              {% for item in item.items.properties %}
-                {% include "./item.nunjucks" %}
-              {% endfor %}
-            </ul>
-          {% endif %}
-
-          {# Sub-item Examples #}
-          {% set parent = item.items %}
-          {% include "./examples.nunjucks" %}
-        </div>
-      {% endif %}
-    {% endif %}
   {% endif %}
 
   {% if item.properties %}
@@ -170,5 +51,4 @@
   {% if item.structuredValue %}
     <pre><code>{{ item.structuredValue | dump }}</code></pre>
   {% endif %}
-
 </li>

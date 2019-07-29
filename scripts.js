@@ -29,6 +29,7 @@ $(document).ready(function() {
     try {
       if (history && history.replaceState) {
           history.replaceState({}, '', '#');
+          $('.collapse').collapse('hide');
       }
     } catch(e) {}
   });
