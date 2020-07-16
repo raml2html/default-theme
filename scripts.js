@@ -1,7 +1,4 @@
 $(document).ready(function() {
-  $('.page-header pre code, .top-resource-description pre code, .modal-body pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
 
   $('[data-toggle]').click(function() {
     var selector = $(this).data('target') + ' pre code';
