@@ -1,3 +1,72 @@
+/*PlanMill custom css*/
+* {
+  scroll-padding-top: 20px;
+  scroll-behavior: smooth;
+}
+/*PlanMill custom css*/
+.container:before{
+  background: #20272B;
+  width: 1700px;
+  font-size: 36px;
+  margin-left: -190px;
+  padding: 10px 0 10px 190px;
+  height: 80px;
+}
+/*PlanMill custom css*/
+.h1, h1 {
+  font-size: 36px;
+  margin-top: -100px !important;
+  white-space: nowrap !important;
+  /*overflow: hidden !important;*/
+  padding-top: 0px !important;
+  color: white;
+  margin-bottom: 40px;
+}
+
+/*PlanMill custom css*/
+.nav>li>a:focus, .nav>li>a:hover {
+  text-decoration: none;
+  background-color: white;
+  border-left: 1px solid #b73d33;
+  font-weight: 300;
+}
+/*PlanMill custom css*/
+.nav-pills>li:first-child>a:focus, .nav-pills>li.active+ li>a, .nav-pills>li.active+ li>a:focus, .nav-pills>li.active+ li>a:hover {
+  border-left: 3px solid #337ab7;
+  font-weight: 600;
+} 
+/*PlanMill custom css*/
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: #337ab7;
+  background-color:rgba(255,255,255,.15);
+}
+/*PlanMill custom css*/
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/*PlanMill custom css*/
+.nav-pills>li>a {
+  border-radius: 0px;
+}
+
+/*PlanMill custom css*/
+#sidebar {
+  margin-top: 20px;
+  padding-right: 5px;
+  overflow: auto;
+  height: 85%;
+  background-color:rgba(255,255,255,.15);
+  transition: box-shadow .75s;
+  border-radius: 9px;
+  width: 200px;
+}
 .hljs {
   background: transparent;
 }
