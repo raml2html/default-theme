@@ -4,7 +4,7 @@
   scroll-behavior: smooth;
 }
 /*PlanMill custom css*/
-.container:before{
+.container:before {
   background: #20272B;
   width: 1700px !important;
   font-size: 36px;
@@ -58,15 +58,16 @@ body {
 
 /*PlanMill custom css*/
 #sidebar {
-  margin-top: 20px !important;
-  padding-right: 5px !important;
-  overflow: auto !important;
-  height: 82% !important;
+  margin-top: 20px;
+  padding-right: 5px;
+  overflow: auto;
+  height: 82%;
   background-color:rgba(255,255,255,.15);
   transition: box-shadow .75s;
   border-radius: 9px;
-  width: 200px !important;
+  width: 200px;
 }
+
 .hljs {
   background: transparent;
 }
@@ -141,12 +142,6 @@ body {
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   padding: 10px;
-}
-#sidebar {
-  margin-top: 30px;
-  padding-right: 5px;
-  overflow: auto;
-  height: 90%;
 }
 .top-resource-description {
   border-bottom: 1px solid #ddd;
