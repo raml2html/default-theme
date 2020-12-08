@@ -6,6 +6,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="generator" content="https://github.com/raml2html/raml2html {{ config.raml2HtmlVersion }}">
 
+    <link rel="icon" type="image/png" sizes="64x64" href="/icons/planmill-favicon-2020_64x64.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/planmill-favicon-2020_32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/planmill-favicon-2020_16x16.png"/>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
