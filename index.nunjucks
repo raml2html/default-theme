@@ -25,7 +25,7 @@
       <div class="row">
         <div class="col-md-9" role="main">
           <div class="page-header">
-            <h1>{% if title %}{{ title }}{% else %}API Documentation{% endif %}{% if version %} <small>version {{ version }}</small>{% endif %}</h1>
+            <h1>{% if title %}{{ title }} API Documentation {% else %}API Documentation{% endif %}{% if version %} <small>version {{ version }}</small>{% endif %}</h1>
             <p>{{ baseUri }}</p>
 
             {% if description %}
