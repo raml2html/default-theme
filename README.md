@@ -12,7 +12,7 @@ To get the best environment to work on raml2html and the default theme, follow t
 3. In raml2html-default-theme run `npm link raml2html`.
 
 Now both projects are installed globally, but using the local development versions of both.
-From the theme repo's example folder you can run the `render-all-examples` script without problem.
+From the theme repo's examples folder you can run the `render-all-examples` script without problem.
 
 ## License
 raml2html-default-theme is available under the MIT license. See the LICENSE file for more info.
