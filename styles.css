@@ -133,3 +133,9 @@ pre code {
 .required {
   color: #f00;
 }
+.panel-heading {
+  padding: 0 px;
+  margin: 0 0 -10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+}

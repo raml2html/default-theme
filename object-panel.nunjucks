@@ -1,0 +1,18 @@
+<div class="panel-collapse collapse" id="{{refId}}" >
+    <div class="panel-body">
+        <div class="panel panel-default" >
+            <h3 class="panel-heading">
+                <strong>{{-super.displayName-}}</strong> ({{super.type}})
+            </h3>
+            <div class="panel-body">
+                <div class="items">
+                    <ul>
+                        {%- for item in super.properties -%}
+                            {%- include "./item.nunjucks" -%}
+                        {%- endfor -%}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+{%- if super.type === 'object' and super.properties.length -%}
+    {%- set refId = super.displayName | addUniqueNr -%}
+    <a data-toggle = "collapse" href="#{{refId}}"> {{super.displayName -}}</a>
+    {%- include "./object-panel.nunjucks" -%}
+{%- elif super.type === 'array' -%}
+    {% set item = super %}
+    {%- if item.items.displayName-%}
+        {%- set idName = [item.items.displayName, '_array'] | join('') -%}
+        {%- set title = idName -%}
+    {%- else -%}
+        {%- set idName = [item.items.type, '_', item.type] | join('') -%}
+        {%- set title = '' -%}
+    {%- endif -%}
+    {%- set titleType = "array" -%}
+    {%- set refId = idName | addUniqueNr -%}
+    <a  data-toggle = "collapse" href="#{{refId}}">{{idName}}</a>
+    {%- set fromFile = "union" -%}
+    {%- include "./array-panel.nunjucks" -%}
+{%- elif super.type === 'union' -%}
+    union of
+    {% for super in item.anyOf -%}
+        {% include "./union.nunjucks"%}
+    {%- endfor %}
+{%- elif item.enum -%}
+    {%- include "./enum.nunjucks" -%}
+{%- else -%}
+    {{super.type-}}
+    {%- set item = super -%}
+    {%- include "./facets.nunjucks"-%}
+{%- endif -%}
+{%- if not loop.last %}
+    or
+{% endif -%}
+
+

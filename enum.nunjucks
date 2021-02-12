@@ -1,0 +1,13 @@
+{%- if item.enum.length === 1 -%}
+    the literal: {{ item.enum.join(', ') }}
+{%- elif item.enum.join('').length <= 80 -%}
+    one of: {{ item.enum.join(', ') }}
+{%- elif item.enum.join('').length >= 550-%}
+    {%- set refId = item.displayName | addUniqueNr -%}
+    <a data-toggle = "collapse" href="#{{refId}}"><span style="color: #333">one of:</span> ...</a>
+    <div class="collapse" id="{{refId}}">
+        {{item.enum.join(',<br>')}}
+    </div>
+{%- else -%}
+    one of: {{item.enum.join(',<br>')}}
+{%- endif -%}
