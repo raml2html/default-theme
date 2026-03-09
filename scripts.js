@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.page-header pre code, .top-resource-description pre code, .modal-body pre code').each(function(i, block) {
+  $('.page-header pre code, .top-resource-description pre code').each(function(i, block) {
     hljs.highlightBlock(block);
   });
 
@@ -17,6 +17,9 @@ $(document).ready(function() {
 
     // do we have such element + is it a modal?  --> show it
     if (element.length && element.hasClass('modal')) {
+      element.find('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
       element.modal('show');
     }
   });
